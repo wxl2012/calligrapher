@@ -42,19 +42,23 @@
     </div>
 </div>
 
-<?php if(true){ ?>
+<?php if(isset($items) && $items){ ?>
     <div style="background-color: #F1E9E1; margin: 20px; padding: 15px;">
         <ul class="list-group">
-            <?php for($i = 0; $i < 10; $i ++){ ?>
+            <?php foreach($items as $item){ ?>
                 <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-9">
-                            河南省 焦作市 博爱县
+                    <a href="/home/view/<?php echo $item->id; ?>">
+                        <div class="row">
+                            <div class="col-xs-9">
+                                <?php echo $item->country->name;?>
+                                <?php echo $item->province->name;?>
+                                <?php echo $item->city->name;?>
+                            </div>
+                            <div class="col-xs-3">
+                                <?php echo $item->name;?>
+                            </div>
                         </div>
-                        <div class="col-xs-3">
-                            李小红
-                        </div>
-                    </div>
+                    </a>
                 </li>
             <?php } ?>
         </ul>
