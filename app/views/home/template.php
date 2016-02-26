@@ -32,8 +32,8 @@
 
 
     <div class="top">
-        <div>
-            <img src="/assets/img/company.png" alt=""/>
+        <div style="padding: 10px;">
+            <img src="/assets/img/company.png" alt="" style="width: 100%;"/>
         </div>
         <p class="text-center">
             中国书法家数据库
