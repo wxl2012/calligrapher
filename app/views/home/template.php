@@ -33,8 +33,7 @@
 
     <div class="top">
         <div>
-            <p style="font-size:12pt;">中华人民共和国文化部主管</p>
-            <p style="font-size:9pt;letter-spacing: 0px;">Managed by Ministry of Culture.P.R. China</p>
+            <img src="/assets/img/company.png" alt=""/>
         </div>
         <p class="text-center">
             中国书法家数据库
