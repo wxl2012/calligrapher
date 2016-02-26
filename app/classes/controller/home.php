@@ -30,17 +30,21 @@ class Controller_Home extends \Fuel\Core\Controller_Template
     public function action_index()
     {
         $keyword = \Input::get('keyword', false);
-        $items = \Model_Calligrapher::query()
-            ->related(['country', 'province', 'city', 'county']);
         if($keyword){
-            $items->or_where('country.name', 'like', $keyword);
-            $items->or_where('province.name', 'like', $keyword);
-            $items->or_where('city.name', 'like', $keyword);
-            $items->or_where('county.name', 'like', $keyword);
-            $items->or_where('name', 'like', $keyword);
+            $items = \Model_Calligrapher::query()
+                ->related(['country', 'province', 'city', 'county']);
+            if($keyword){
+                $items->or_where('country.name', 'like', $keyword);
+                $items->or_where('province.name', 'like', $keyword);
+                $items->or_where('city.name', 'like', $keyword);
+                $items->or_where('county.name', 'like', $keyword);
+                $items->or_where('name', 'like', $keyword);
+            }
+            $params['items'] = $items->get();
+            \View::set_global($params);
         }
-        $params['items'] = $items->get();
-        \View::set_global($params);
+
+
         $this->template->title = '书法名家数据库';
         $this->template->content = \View::forge('home/index');
     }
