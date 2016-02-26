@@ -36,10 +36,12 @@
     }
 </style>
 <div style="padding-top: 20px;">
-    <div class="input-group" style="width: 90%; margin: auto;">
-        <input type="text" class="form-control" name="keyword" id="keyword" value="" placeholder="在此输入地区或姓名" aria-describedby="btnSearch">
-        <a class="input-group-addon" id="btnSearch"><i class="fa fa-search"></i></a>
-    </div>
+    <form>
+        <div class="input-group" style="width: 90%; margin: auto;">
+            <input type="text" class="form-control" name="keyword" id="keyword" value="" placeholder="在此输入地区或姓名" aria-describedby="btnSearch">
+            <a class="input-group-addon" id="btnSearch" href="javascript:$('form').submit();"><i class="fa fa-search"></i></a>
+        </div>
+    </form>
 </div>
 
 <?php if(isset($items) && $items){ ?>
@@ -50,9 +52,9 @@
                     <a href="/home/view/<?php echo $item->id; ?>">
                         <div class="row">
                             <div class="col-xs-9">
-                                <?php echo $item->country->name;?>
-                                <?php echo $item->province->name;?>
-                                <?php echo $item->city->name;?>
+                                <?php echo $item->country ? $item->country->name : '';?>
+                                <?php echo $item->province ? $item->province->name : '';?>
+                                <?php echo $item->city ? $item->city->name : '';?>
                             </div>
                             <div class="col-xs-3">
                                 <?php echo $item->name;?>

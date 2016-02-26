@@ -11,4 +11,21 @@ return array(
 			'password'   => 'root',
 		),
 	),
+	'default' => array(
+		'type'        => 'mysqli',
+		'connection'  => array(
+			'hostname'   => '122.114.61.179',
+			'username'   => 'ray',
+			'password'   => 'ray214521',
+			'database'   => 'vhost',
+			'persistent' => false,
+		),
+		'identifier'   => '`',
+		'table_prefix' => '',
+		'charset'      => 'utf8',
+		'collation'    => false,
+		'enable_cache' => true,
+		'profiling'    => false,
+		'readonly'     => false,
+	),
 );
